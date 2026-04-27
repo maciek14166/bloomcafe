@@ -2,154 +2,194 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <title>Kawiarnia Aroma</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloom Cafe By Nicolette</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f7f3ef;
-      color: #333;
+      font-family: 'Poppins', sans-serif;
+      background:#0f0f0f;
+      color:#fff;
+      overflow-x:hidden;
     }
+
     header {
-      background: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93') center/cover;
-      height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-align: center;
+      height:100vh;
+      background:url('https://images.unsplash.com/photo-1498804103079-a6351b050096') center/cover fixed;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
     }
+
     header h1 {
-      font-size: 3em;
-      background: rgba(0,0,0,0.5);
-      padding: 20px;
+      font-size:4rem;
+      background:rgba(0,0,0,0.5);
+      padding:20px 40px;
+      border-radius:20px;
+      backdrop-filter: blur(10px);
+      animation: fadeIn 1.5s ease;
     }
+
+    header p {
+      margin-top:15px;
+      font-size:1.2rem;
+      opacity:0.8;
+      animation: fadeIn 2s ease;
+    }
+
     section {
-      padding: 50px 20px;
-      max-width: 1000px;
-      margin: auto;
+      padding:100px 20px;
+      max-width:1100px;
+      margin:auto;
+      opacity:0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
     }
+
+    section.show {
+      opacity:1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      font-size:2.5rem;
+      margin-bottom:20px;
+    }
+
     .menu {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
     }
-    .item {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
+
+    .card {
+      background:rgba(255,255,255,0.05);
+      border-radius:20px;
+      padding:25px;
+      backdrop-filter: blur(15px);
+      transition:0.4s;
     }
+
+    .card:hover {
+      transform: translateY(-12px) scale(1.05);
+      background:rgba(255,255,255,0.12);
+    }
+
+    .gallery {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:10px;
+    }
+
+    .gallery img {
+      width:100%;
+      height:260px;
+      object-fit:cover;
+      border-radius:15px;
+      transition:0.4s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.12);
+    }
+
+    .cta {
+      text-align:center;
+      margin-top:40px;
+    }
+
+    .cta button {
+      padding:15px 35px;
+      border:none;
+      border-radius:30px;
+      background:#ff6b6b;
+      color:white;
+      font-size:1rem;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .cta button:hover {
+      transform:scale(1.1);
+      background:#ff3b3b;
+    }
+
     footer {
-      background: #222;
-      color: white;
-      text-align: center;
-      padding: 20px;
+      text-align:center;
+      padding:40px;
+      background:#000;
+      opacity:0.7;
     }
-    button {
-      background: #6b4f4f;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
+
+    @keyframes fadeIn {
+      from { opacity:0; transform:translateY(20px); }
+      to { opacity:1; transform:translateY(0); }
     }
   </style>
 </head>
 <body>
 
 <header>
-<h1>Bloom Cafe By Nicolette ☕</h1>
-<p>American Style Coffee & Brunch Spot</p>
+  <h1>Bloom Cafe By Nicolette ☕</h1>
+  <p>American Style Coffee & Brunch Spot</p>
 </header>
 
 <section>
-<h2>O nas</h2>
-<p>Nowoczesna kawiarnia inspirowana Nowym Jorkiem — idealna pod Instagram.</p>
+  <h2>O nas</h2>
+  <p>Nowoczesna kawiarnia inspirowana Nowym Jorkiem — kawa, brunch i klimat idealny pod Instagram. Minimalizm, światło i design tworzą miejsce, które chce się fotografować.</p>
 </section>
 
 <section>
-<h2>Galeria</h2>
-
-<div class="slider">
-<div class="slides" id="slides">
-
-<img src="/images/pierwsze.jpg">
-<img src="/images/1.jpg">
-<img src="/images/2.jpg">
-<img src="/images/3.jpg">
-<img src="/images/4.jpg">
-<img src="/images/5.jpg">
-<img src="/images/6.jpg">
-<img src="/images/7.jpg">
-<img src="/images/8.jpg">
-<img src="/images/9.jpg">
-<img src="/images/10.jpg">
-<img src="/images/11.jpg">
-<img src="/images/12.jpg">
-<img src="/images/13.jpg">
-
-</div>
-
-<button class="nav-btn prev" onclick="moveSlide(-1)">‹</button>
-<button class="nav-btn next" onclick="moveSlide(1)">›</button>
-</div>
-
-<div class="dots" id="dots"></div>
-
+  <h2>Menu</h2>
+  <div class="menu">
+    <div class="card"><h3>Flat White</h3><p>15 zł</p></div>
+    <div class="card"><h3>Iced Latte</h3><p>17 zł</p></div>
+    <div class="card"><h3>Pancakes</h3><p>25 zł</p></div>
+    <div class="card"><h3>Avocado Toast</h3><p>28 zł</p></div>
+  </div>
 </section>
 
 <section>
-<h2>Lokalizacja</h2>
-<p>📍 Polskich Kolejarzy 5/lok 8-9, Pruszcz Gdański</p>
+  <h2>Galeria</h2>
+  <div class="gallery">
+    <img src="1">
+    <img src="2">
+    <img src="3">
+    <img src="4">
+  </div>
+</section>
 
-<div class="map">
-<iframe src="https://www.google.com/maps?q=Polskich+Kolejarzy+5+Pruszcz+Gdanski&z=17&output=embed"></iframe>
-</div>
+<section>
+  <h2>Kontakt</h2>
+  <p>📍 Polskich Kolejarzy 5/lok 8-9, 83-000 Pruszcz Gdański</p>
+  <p>📞 123 456 789</p>
+
+  <div class="cta">
+    <button onclick="window.open('https://maps.google.com')">Zobacz na mapie</button>
+  </div>
 </section>
 
 <footer>
-<p>© 2026 Bloom Cafe By Nicolette</p>
+  <p>© 2026 Bloom Cafe By Nicolette</p>
 </footer>
 
 <script>
-let index = 0;
-const slides = document.getElementById('slides');
-const total = slides.children.length;
-const dotsContainer = document.getElementById('dots');
+  const sections = document.querySelectorAll("section");
 
-for(let i=0;i<total;i++){
-let dot=document.createElement('span');
-dot.classList.add('dot');
-dot.onclick=()=>goToSlide(i);
-dotsContainer.appendChild(dot);
-}
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  }, { threshold: 0.2 });
 
-function updateSlider(){
-slides.style.transform=`translateX(-${index*100}%)`;
-[...dotsContainer.children].forEach(d=>d.classList.remove('active'));
-dotsContainer.children[index].classList.add('active');
-}
-
-function moveSlide(step){
-index=(index+step+total)%total;
-updateSlider();
-}
-
-function goToSlide(i){
-index=i;
-updateSlider();
-}
-
-setInterval(()=>moveSlide(1),5000);
-updateSlider();
-
-// scroll animation
-const sections=document.querySelectorAll('section');
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')})
-},{threshold:.2});
-sections.forEach(s=>observer.observe(s));
+  sections.forEach(section => {
+    observer.observe(section);
+  });
 </script>
 
 </body>

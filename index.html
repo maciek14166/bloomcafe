@@ -16,7 +16,7 @@
 
     header {
       height:100vh;
-      background:url('https://images.unsplash.com/photo-1498804103079-a6351b050096') center/cover fixed;
+      background:url('pierwsze.jpg') center/cover fixed;
       display:flex;
       flex-direction:column;
       align-items:center;
@@ -26,7 +26,7 @@
 
     header h1 {
       font-size:4rem;
-      background:rgba(0,0,0,0.5);
+      background:rgba(0,0,0,0.55);
       padding:20px 40px;
       border-radius:20px;
       backdrop-filter: blur(10px);
@@ -36,7 +36,7 @@
     header p {
       margin-top:15px;
       font-size:1.2rem;
-      opacity:0.8;
+      opacity:0.85;
       animation: fadeIn 2s ease;
     }
 
@@ -57,6 +57,20 @@
     h2 {
       font-size:2.5rem;
       margin-bottom:20px;
+    }
+
+    /* center ONLY about section text */
+    section:nth-of-type(1) p {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* center ONLY about section text */
+    section:nth-of-type(1) p {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
     .menu {
@@ -96,32 +110,81 @@
       transform: scale(1.12);
     }
 
-    .cta {
-      text-align:center;
-      margin-top:40px;
+    /* MAPA PREMIUM */
+    .map-wrapper{
+      margin-top:30px;
+      border-radius:25px;
+      overflow:hidden;
+      position:relative;
+      box-shadow:0 20px 60px rgba(0,0,0,0.6);
     }
 
-    .cta button {
-      padding:15px 35px;
+    .map-wrapper iframe{
+      width:100%;
+      height:420px;
+      border:0;
+      filter: grayscale(100%) invert(92%) contrast(90%);
+    }
+
+    .pin {
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-100%);
+      font-size:30px;
+      animation:bounce 1.5s infinite;
+      pointer-events:none;
+    }
+
+    @keyframes bounce{
+      0%,100%{transform:translate(-50%,-100%)}
+      50%{transform:translate(-50%,-120%)}
+    }
+
+    .cta {
+      text-align:center;
+      margin-top:25px;
+      display:flex;
+      gap:15px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+
+    .btn {
+      padding:14px 26px;
       border:none;
       border-radius:30px;
-      background:#ff6b6b;
-      color:white;
       font-size:1rem;
       cursor:pointer;
       transition:0.3s;
     }
 
-    .cta button:hover {
-      transform:scale(1.1);
+    .btn-primary{
+      background:#ff6b6b;
+      color:#fff;
+    }
+
+    .btn-primary:hover{
+      transform:scale(1.08);
       background:#ff3b3b;
+    }
+
+    .btn-dark{
+      background:#222;
+      color:#fff;
+      border:1px solid rgba(255,255,255,0.2);
+    }
+
+    .btn-dark:hover{
+      transform:scale(1.08);
+      background:#333;
     }
 
     footer {
       text-align:center;
       padding:40px;
       background:#000;
-      opacity:0.7;
+      opacity:0.75;
     }
 
     @keyframes fadeIn {
@@ -139,9 +202,10 @@
 
 <section>
   <h2>O nas</h2>
-  <p>Bloom Cafe By Nicolette powstało z pasji do kawy, designu i tworzenia miejsc z duszą. 
-    To nie jest zwykła kawiarnia — to przestrzeń inspirowana stylem nowoczesnych, amerykańskich coffee spotów.
-    Każda filiżanka kawy, każdy detal wnętrza i każdy kadr został zaprojektowany tak, aby tworzyć doświadczenie, które chce się zatrzymać na zdjęciu… i w pamięci.</p>
+  <p>
+    Bloom Cafe By Nicolette powstało z pasji do kawy, designu i tworzenia miejsc z duszą.
+    To nowoczesna przestrzeń inspirowana amerykańskimi coffee shopami — idealna na spotkania, zdjęcia i slow life.
+  </p>
 </section>
 
 <section>
@@ -156,24 +220,44 @@
 
 <section>
   <h2>Galeria</h2>
-  
   <div class="gallery">
-<img src="pierwsze.jpg"><img src="1.jpg">
-<img src="2.jpg"><img src="3.jpg"><img src="4.jpg">
-<img src="5.jpg"><img src="6.jpg"><img src="7.jpg">
-<img src="8.jpg"><img src="9.jpg"><img src="10.jpg">
-<img src="11.jpg"><img src="12.jpg"><img src="13.jpg">
-<img src="14.jpg">
+    <img src="pierwsze.jpg">
+    <img src="1.jpg">
+    <img src="2.jpg">
+    <img src="3.jpg">
+    <img src="4.jpg">
+    <img src="5.jpg">
+    <img src="6.jpg">
+    <img src="7.jpg">
+    <img src="8.jpg">
+    <img src="9.jpg">
+    <img src="10.jpg">
+    <img src="11.jpg">
+    <img src="12.jpg">
+    <img src="13.jpg">
+    <img src="14.jpg">
+    <img src="15.jpg">
   </div>
 </section>
 
 <section>
-  <h2>Kontakt</h2>
+  <h2>Lokalizacja</h2>
   <p>📍 Polskich Kolejarzy 5/lok 8-9, 83-000 Pruszcz Gdański</p>
-  <p>📞 123 456 789</p>
+
+  <div class="map-wrapper">
+    <iframe 
+      src="https://www.google.com/maps?q=Polskich+Kolejarzy+5,+Pruszcz+Gdański&output=embed">
+    </iframe>
+    <div class="pin">📍</div>
+  </div>
 
   <div class="cta">
-    <button onclick="window.open('https://maps.google.com')">Zobacz na mapie</button>
+    <button class="btn btn-primary" onclick="window.open('https://www.google.com/maps/dir/?api=1&destination=Polskich+Kolejarzy+5+Pruszcz+Gdański')">
+      Wyznacz trasę
+    </button>
+    <button class="btn btn-dark" onclick="window.open('https://maps.google.com')">
+      Otwórz w Google Maps
+    </button>
   </div>
 </section>
 
@@ -183,18 +267,13 @@
 
 <script>
   const sections = document.querySelectorAll("section");
-
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if(entry.isIntersecting) {
-        entry.target.classList.add("show");
-      }
+      if(entry.isIntersecting) entry.target.classList.add("show");
     });
   }, { threshold: 0.2 });
 
-  sections.forEach(section => {
-    observer.observe(section);
-  });
+  sections.forEach(section => observer.observe(section));
 </script>
 
 </body>

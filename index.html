@@ -9,7 +9,7 @@
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
       font-family: 'Poppins', sans-serif;
-      background:#0f0f0f;
+      background:#f7d6e0;
       color:#fff;
       overflow-x:hidden;
     }
@@ -128,7 +128,13 @@
       from { opacity:0; transform:translateY(20px); }
       to { opacity:1; transform:translateY(0); }
     }
-  </style>
+  section:nth-of-type(1) p {
+  text-align:center;
+  max-width:800px;
+  margin:0 auto;
+}
+
+</style>
 </head>
 <body>
 
@@ -140,8 +146,9 @@
 <section>
   <h2>O nas</h2>
   <p>
-    Bloom Cafe By Nicolette powstało z pasji do kawy, designu i tworzenia miejsc z duszą.
+   Bloom Cafe By Nicolette powstało z pasji do kawy, designu i tworzenia miejsc z duszą.
 To nie jest zwykła kawiarnia — to przestrzeń inspirowana stylem nowoczesnych, amerykańskich coffee spotów.
+
 Każda filiżanka kawy, każdy detal wnętrza i każdy kadr został zaprojektowany tak, aby tworzyć doświadczenie, które chce się zatrzymać na zdjęciu… i w pamięci.
   </p>
 </section>
@@ -179,10 +186,15 @@ Każda filiżanka kawy, każdy detal wnętrza i każdy kadr został zaprojektowa
 <section>
   <h2>Kontakt</h2>
   <p>📍 Polskich Kolejarzy 5/lok 8-9, 83-000 Pruszcz Gdański</p>
-  <p>📞 577103615</p>
+  <p>📞 123 456 789</p>
 
   <div class="cta">
-    <button onclick="window.open('https://maps.google.com')">Zobacz na mapie</button>
+    <button class="btn btn-primary" onclick="window.open('https://www.google.com/maps/dir/?api=1&destination=Polskich+Kolejarzy+5+Pruszcz+Gdański')">
+      Wyznacz trasę
+    </button>
+    <button class="btn btn-dark" onclick="window.open('tel:123456789')">
+      Zadzwoń
+    </button>
   </div>
 </section>
 

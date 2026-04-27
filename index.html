@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloom Cafe By Nicolette</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background:#0f0f0f;
+      color:#fff;
+      overflow-x:hidden;
+    }
+
+    header {
+      height:100vh;
+      background:url('https://images.unsplash.com/photo-1498804103079-a6351b050096') center/cover;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+    }
+
+    header h1 {
+      font-size:4rem;
+      background:rgba(0,0,0,0.5);
+      padding:20px 40px;
+      border-radius:20px;
+      backdrop-filter: blur(10px);
+      animation: fadeIn 2s ease;
+    }
+
+    header p {
+      margin-top:15px;
+      font-size:1.2rem;
+      opacity:0.8;
+    }
+
+    section {
+      padding:80px 20px;
+      max-width:1100px;
+      margin:auto;
+    }
+
+    h2 {
+      font-size:2.5rem;
+      margin-bottom:20px;
+    }
+
+    .menu {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+    }
+
+    .card {
+      background:rgba(255,255,255,0.05);
+      border-radius:20px;
+      padding:20px;
+      backdrop-filter: blur(15px);
+      transition:0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.03);
+      background:rgba(255,255,255,0.1);
+    }
+
+    .gallery {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:10px;
+    }
+
+    .gallery img {
+      width:100%;
+      height:250px;
+      object-fit:cover;
+      border-radius:15px;
+      transition:0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.1);
+    }
+
+    .cta {
+      text-align:center;
+      margin-top:40px;
+    }
+
+    .cta button {
+      padding:15px 30px;
+      border:none;
+      border-radius:30px;
+      background:#ff6b6b;
+      color:white;
+      font-size:1rem;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .cta button:hover {
+      transform:scale(1.1);
+      background:#ff3b3b;
+    }
+
+    footer {
+      text-align:center;
+      padding:40px;
+      background:#000;
+      opacity:0.7;
+    }
+
+    @keyframes fadeIn {
+      from { opacity:0; transform:translateY(20px); }
+      to { opacity:1; transform:translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Bloom Cafe By Nicolette ☕</h1>
+  <p>American Style Coffee & Brunch Spot</p>
+</header>
+
+<section>
+  <h2>O nas</h2>
+  <p>Bloom Cafe to miejsce inspirowane amerykańskim stylem życia — kawa, brunch i klimat jak z Nowego Jorku. Idealne miejsce na spotkania, pracę i zdjęcia na Instagram.</p>
+</section>
+
+<section>
+  <h2>Menu</h2>
+  <div class="menu">
+    <div class="card"><h3>Flat White</h3><p>15 zł</p></div>
+    <div class="card"><h3>Iced Latte</h3><p>17 zł</p></div>
+    <div class="card"><h3>Pancakes</h3><p>25 zł</p></div>
+    <div class="card"><h3>Avocado Toast</h3><p>28 zł</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Galeria</h2>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
+    <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348">
+    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24">
+    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085">
+  </div>
+</section>
+
+<section>
+  <h2>Kontakt</h2>
+  <p>📍 Polskich Kolejarzy 5/lok 8-9, 83-000 Pruszcz Gdański</p>
+  <p>📞 123 456 789</p>
+
+  <div class="cta">
+    <button onclick="window.open('https://maps.google.com')">Zobacz na mapie</button>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Bloom Cafe By Nicolette</p>
+</footer>
+
+</body>
+</html>
